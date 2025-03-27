@@ -5,27 +5,28 @@
 </head>
 <body>
     <h1>Bienvenue sur mon site de test</h1>
+    <div class="embeddedMessagingContainer"></div>
     <script type='text/javascript'>
         function initEmbeddedMessaging() {
-                try {
-                        embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-
-                        embeddedservice_bootstrap.init(
-                                '00DS9000005HPSA',
-                                'Recruiter_ASA_Msg_ARF',
-                                'https://connectadeccogroup--agentforce.sandbox.my.site.com/ESWRecruiterASAMsgARF1733753353536',
-                                {
-                                        scrt2URL: 'https://connectadeccogroup--agentforce.sandbox.my.salesforce-scrt.com'
-                                }
-                        );
-                } catch (err) {
-                        console.error('Error loading Embedded Messaging: ', err);
-                }
+            try {
+                embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+    
+                embeddedservice_bootstrap.init(
+                    '00DS9000005HPSA',
+                    'Recruiter_Productivity_Program',
+                    'https://connectadeccogroup--agentforce.sandbox.my.site.com/ESWRecruiterProductivity1743097278393',
+                    {
+                        scrt2URL: 'https://connectadeccogroup--agentforce.sandbox.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
         };
         window.addEventListener("onEmbeddedMessagingReady", () => {
             // as of 11/21, don't set inline as it causes auto-launch
             // window.embeddedservice_bootstrap.settings.displayMode = "inline";
-            window.embeddedservice_bootstrap.settings.targetElement = document.body.querySelector("#embeddedMessagingContainer");
+            window.embeddedservice_bootstrap.settings.targetElement = document.body.querySelector(".embeddedMessagingContainer");
         });
 
         window.addEventListener("onEmbeddedMessagingButtonCreated", () => {
