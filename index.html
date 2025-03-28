@@ -8,6 +8,10 @@
     <div class="embeddedMessagingContainer"></div>
     <style>
 
+        .minimizeButton {
+            display:none;
+        }
+
         .slds-chat-event {
             display: none;
         }
@@ -55,6 +59,10 @@
             });
         });
 
+        window.addEventListener("onEmbeddedMessagingWindowMinimized", e => {
+            e.preventDefault();
+        });
+        
 
 
         function initEmbeddedMessaging() {
