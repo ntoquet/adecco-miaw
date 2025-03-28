@@ -29,6 +29,29 @@
         }
     </style>
     <script type='text/javascript'>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const refId = urlParams.get('refId');
+        const ABTest = urlParams.get('ABTest');
+        
+        //let header = document.querySelector(".sf-interactions-proxy"); // Replace with actual CSS class      
+        //console.log('headerssss', header);
+
+        window.addEventListener("onEmbeddedMessagingReady", e => {
+            embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
+                "Conversation_Key": {
+                    "value": refId,
+                    "isEditableByEndUser": false
+                },
+                "ABTest": {
+                    "value": ABTest,
+                    "isEditableByEndUser": false
+                },
+            });
+        });
+
+
+
         /*function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
