@@ -52,7 +52,7 @@
 
 
 
-        /*function initEmbeddedMessaging() {
+        function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
@@ -68,8 +68,8 @@
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
-    */
-
+    
+        /*
     function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
@@ -85,7 +85,7 @@
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
-	};
+	};*/
 
     window.addEventListener("onEmbeddedMessagingReady", () => {
         // as of 11/21, don't set inline as it causes auto-launch
