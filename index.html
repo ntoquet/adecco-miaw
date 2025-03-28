@@ -106,8 +106,9 @@
         // as of 11/21, don't set inline as it causes auto-launch
         // window.embeddedservice_bootstrap.settings.displayMode = "inline";
         console.log('onEmbeddedMessagingReady try to load miaw into a div');
-        console.log(document.body.querySelector(".embeddedMessagingContainer"));
         window.embeddedservice_bootstrap.settings.targetElement = document.body.querySelector(".embeddedMessagingContainer");
+        document.body.querySelector(".minimizeButton").style.display = 'none';
+        document.body.querySelector(".slds-chat-event").style.display = 'none';
     });
 
     window.addEventListener("onEmbeddedMessagingButtonCreated", () => {
