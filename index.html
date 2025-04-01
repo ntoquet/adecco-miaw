@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Test Salesforce Chat</title>
 </head>
 <body>
@@ -71,8 +72,8 @@
         function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-            embeddedservice_bootstrap.settings.widgetWidth = '100%'; // For example, enter 'en' or 'en-US'
-            embeddedservice_bootstrap.settings.widgetFontSize = '20px'; // For example, enter 'en' or 'en-US'
+            embeddedservice_bootstrap.settings.shouldShowParticipantChgEvntInConvHist = false;
+
 
 			embeddedservice_bootstrap.init(
 				'00DS9000005HPSA',
@@ -110,6 +111,12 @@
         // window.embeddedservice_bootstrap.settings.displayMode = "inline";
         console.log('onEmbeddedMessagingReady try to load miaw into a div');
         window.embeddedservice_bootstrap.settings.targetElement = document.body.querySelector(".embeddedMessagingContainer");
+        var iframe = document.getElementById('embeddedMessagingFrame');
+        var contenuIframe = iframe.contentDocument || iframe.contentWindow.document;
+
+        // Accéder à un élément dans l'iframe
+        var elementDansIframe = contenuIframe.getElementById('headerMinimizeButton-25');
+        elementDansIframe.style.display = 'none';
         //document.body.querySelector(".minimizeButton").style.display = 'none';
         //document.body.querySelector(".slds-chat-event").style.display = 'none';
     });
